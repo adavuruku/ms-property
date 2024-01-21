@@ -1,6 +1,37 @@
 spring:
   application:
     name: naming-server
+  config:
+    activate:
+      on-profile: dev
+  data:
+    mongodb:
+      database: service_discovery
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+  security:
+    basic:
+      enabled: true
+    user:
+      name: sherif
+      password: sherif@123
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  instance.prefer-ip-address: true
+
+---
+spring:
+  application:
+    name: naming-server
+  config:
+    activate:
+      on-profile: prod
   data:
     mongodb:
       database: service_discovery
@@ -15,13 +46,3 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
   instance.prefer-ip-address: true
-
-#spring.security.basic.enabled=true
-#spring.security.user.name=eurekauser
-#spring.security.user.password=eureka!
-
-
-
-#spring.data.mongodb.authentication-database=admin
-#spring.data.mongodb.username=root
-#spring.data.mongodb.password=root
