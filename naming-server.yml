@@ -10,12 +10,12 @@ spring:
       port: 27017
       host: localhost
       auto-index-creation: true
-  security:
-    basic:
-      enabled: true
-    user:
-      name: sherif
-      password: sherif@123
+  # security:
+  #   basic:
+  #     enabled: true
+  #   user:
+  #     name: sherif
+  #     password: sherif@123
 server:
   port: 8761
 
