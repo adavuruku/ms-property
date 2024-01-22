@@ -63,7 +63,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://adam:123456@localhost:8761/eureka/
+      defaultZone: http://adams:123456@localhost:8761/eureka/
     instance:
       hostname: localhost
 security-jwt-config:
