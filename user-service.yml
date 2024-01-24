@@ -5,7 +5,7 @@ spring:
     activate:
       on-profile: development
   application:
-    name: authentication-service
+    name: user-service
   data:
     mongodb:
       database: user-service-db
@@ -64,7 +64,7 @@ spring:
     activate:
       on-profile: production
   application:
-    name: authentication-service
+    name: user-service
   data:
     mongodb:
       database: user-service-db
