@@ -48,6 +48,13 @@ resilience4j:
         slow-call-duration-threshold: 15s
         writable-stack-trace-enabled: true
         automatic-transition-from-open-to-half-open-enabled: true
+      instances:
+        user-service-breaker:
+          base-config: shared
+
+management:
+  endpoint.health.show-details: always
+  health.circuitbreakers.enabled: true
 
 ---
 server:
@@ -100,3 +107,10 @@ resilience4j:
         slow-call-duration-threshold: 15s
         writable-stack-trace-enabled: true
         automatic-transition-from-open-to-half-open-enabled: true
+      instances:
+        user-service-breaker:
+          base-config: shared
+
+management:
+  endpoint.health.show-details: always
+  health.circuitbreakers.enabled: true
