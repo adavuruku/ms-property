@@ -1,0 +1,72 @@
+server:
+  port: 8085
+spring:
+  config:
+    activate:
+      on-profile: development
+  application:
+    name: authentication-service
+  data:
+    mongodb:
+      database: user-service-db
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+      # uri: mongodb+srv://<username>:<pwd>@<cluster>.mongodb.net/<db>
+    redis:
+      repositories:
+        enabled: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    expiry:
+      time: 86400
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://adam:123456@localhost:8761/eureka/
+    instance:
+      hostname: localhost
+security-jwt-config:
+  jwtIssuer: sherif-app
+  jwtSecret: encryptoWearMyWorstAreaIsChoosingASecretAndWellEnoughToAllowUsGoHomeAndRestAllManForHimselfInTheCountryOfNoMansLand
+  jwtExpiry: 1440
+
+---
+server:
+  port: 8085
+spring:
+  config:
+    activate:
+      on-profile: production
+  application:
+    name: authentication-service
+  data:
+    mongodb:
+      database: user-service-db
+      port: 27017
+      host: localhost
+      auto-index-creation: true
+      # uri: mongodb+srv://<username>:<pwd>@<cluster>.mongodb.net/<db>
+    redis:
+      repositories:
+        enabled: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    expiry:
+      time: 86400
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://adams:123456@localhost:8761/eureka/
+    instance:
+      hostname: localhost
+security-jwt-config:
+  jwtIssuer: sherif-app
+  jwtSecret: encryptoWearMyWorstAreaIsChoosingASecretAndWellEnoughToAllowUsGoHomeAndRestAllManForHimselfInTheCountryOfNoMansLand
+  jwtExpiry: 1440
