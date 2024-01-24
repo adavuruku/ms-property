@@ -34,6 +34,21 @@ security-jwt-config:
   jwtSecret: encryptoWearMyWorstAreaIsChoosingASecretAndWellEnoughToAllowUsGoHomeAndRestAllManForHimselfInTheCountryOfNoMansLand
   jwtExpiry: 1440
 
+resilience4j:
+  circuitbreaker:
+    configs:
+      shared:
+        register-health-indicator: true
+        sliding-window-type: count-based
+        failure-rate-threshold: 50
+        slow-call-rate-threshold: 50
+        permitted-number-of-calls-in-half-open-state: 1
+        max-wait-duration-in-half-open-state: 10s
+        wait-duration-in-open-state: 10s
+        slow-call-duration-threshold: 15s
+        writable-stack-trace-enabled: true
+        automatic-transition-from-open-to-half-open-enabled: true
+
 ---
 server:
   port: 8085
@@ -70,3 +85,18 @@ security-jwt-config:
   jwtIssuer: sherif-app
   jwtSecret: encryptoWearMyWorstAreaIsChoosingASecretAndWellEnoughToAllowUsGoHomeAndRestAllManForHimselfInTheCountryOfNoMansLand
   jwtExpiry: 1440
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      shared:
+        register-health-indicator: true
+        sliding-window-type: count-based
+        failure-rate-threshold: 50
+        slow-call-rate-threshold: 50
+        permitted-number-of-calls-in-half-open-state: 1
+        max-wait-duration-in-half-open-state: 10s
+        wait-duration-in-open-state: 10s
+        slow-call-duration-threshold: 15s
+        writable-stack-trace-enabled: true
+        automatic-transition-from-open-to-half-open-enabled: true
