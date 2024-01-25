@@ -17,7 +17,7 @@ spring:
   application:
     name: api-gateway
   gateway:
-    excludedURLs: /api/v1/users/authenticate,/api/v1/users/create,/login
+    excludedURLs: /api/v1/users/create/customer,/login
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 management:
