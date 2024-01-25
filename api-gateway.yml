@@ -1,0 +1,37 @@
+debug: true
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+server:
+  port: 8765
+spring:
+  cloud:
+    config:
+      profile: dev
+    gateway:
+      discovery.locator.enabled: true
+  config:
+    activate:
+      on-profile: production
+  application:
+    name: api-gateway
+  gateway:
+    excludedURLs: /api/v1/users/authenticate,/api/v1/users/create,/login
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://adams:123456@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: 'true'
+security-jwt-config:
+  jwtIssuer: sherif-app
+  jwtSecret: encryptoWearMyWorstAreaIsChoosingASecretAndWellEnough!@
+  jwtExpiry: 86400000
